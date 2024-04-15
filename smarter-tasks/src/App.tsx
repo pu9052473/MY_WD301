@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate, RouterProvider, } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import TaskListPage from "./pages/TaskListPage";
+import TaskApp from "./TaskApp";
 import Layout from "./Layout";
 import TaskDetailsPage from "./pages/TaskDetailsPage";
 import Signin from "./pages/Signin";
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
     },
     {
       path: "/tasks",
-      element: <TaskListPage />
+      element: <TaskApp />
     },
     {
       path: "/tasks/:id",
