@@ -1,10 +1,14 @@
-import { createBrowserRouter, Navigate, RouterProvider, Routes, } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
 import Signin from "./pages/signin";
-import Signup from './pages/signup';
+import Signup from "./pages/signup";
 import Dashboard from "./pages/dashboard";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./ProtectedRoute";
-
 
 // this is a "router metthod" for rendering the pages
 const router = createBrowserRouter([
@@ -35,30 +39,29 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <NotFound />,
-  }
+  },
   // {
-    //   element: (
-      //     <ProtectedRoute>
-      //       <Layout /> 
-      //     </ProtectedRoute>
-      //   ),
-      //   children: [ // in this every one is child components of "<Layout />" component
-      //   {
-        //     path: "/home", // path of url
-        //     element: <HomePage /> // the page that we are show in the upper url
-        //   },
-        //   {
-          //     path: "/tasks",
-          //     element: <TaskListPage />
-          //   },
-          //   {
-            //     path: "/tasks/:id",
-            //     element: (<TaskDetailsPage />)
-            //   },
-            //  ]
-            // }
+  //   element: (
+  //     <ProtectedRoute>
+  //       <Layout />
+  //     </ProtectedRoute>
+  //   ),
+  //   children: [ // in this every one is child components of "<Layout />" component
+  //   {
+  //     path: "/home", // path of url
+  //     element: <HomePage /> // the page that we are show in the upper url
+  //   },
+  //   {
+  //     path: "/tasks",
+  //     element: <TaskListPage />
+  //   },
+  //   {
+  //     path: "/tasks/:id",
+  //     element: (<TaskDetailsPage />)
+  //   },
+  //  ]
+  // }
 ]);
-
 
 function App() {
   return (
