@@ -6,6 +6,7 @@ import Logout from "../pages/logout";
 import Members from "../pages/members";
 import Projects from "../pages/projects";
 import NotFound from "../pages/NotFound";
+import { Outlet } from "react-router-dom";
 import Dashboard from "../pages/dashboard";
 import ProtectedRoute from "./ProtectedRoute";
 import AccountLayout from "../layouts/account";
@@ -51,7 +52,17 @@ const router = createBrowserRouter([
       { index: true, element: <Navigate to="/account/projects" replace /> },
       {
         path: "projects",
-        element: <Projects />,
+        children: [
+          { index: true, element: <Projects /> },
+          {
+            path: ":projectID",
+            element: (
+              <>
+                Show project details <Outlet />
+              </>
+            ),
+          },
+        ],
       },
       {
         path: "members",
