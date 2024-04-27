@@ -1,74 +1,52 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
   Routes,
 } from "react-router-dom";
-import Signin from "./pages/signin";
-import Signup from "./pages/signup";
-import Dashboard from "./pages/dashboard";
-import NotFound from "./pages/NotFound";
-import ProtectedRoute from "./ProtectedRoute";
 
-// this is a "router metthod" for rendering the pages
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Signup />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
-  {
-    path: "/signin",
-    element: <Signin />,
-  },
-  {
-    path: "/notfound",
-    element: <NotFound />,
-  },
-  {
-    path: "/dashboard",
-    element: (
-      <ProtectedRoute>
-        <Dashboard />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
-  // {
-  //   element: (
-  //     <ProtectedRoute>
-  //       <Layout />
-  //     </ProtectedRoute>
-  //   ),
-  //   children: [ // in this every one is child components of "<Layout />" component
-  //   {
-  //     path: "/home", // path of url
-  //     element: <HomePage /> // the page that we are show in the upper url
-  //   },
-  //   {
-  //     path: "/tasks",
-  //     element: <TaskListPage />
-  //   },
-  //   {
-  //     path: "/tasks/:id",
-  //     element: (<TaskDetailsPage />)
-  //   },
-  //  ]
-  // }
-]);
+import router from "./routes";
+import { useContext } from "react";
+import { ThemeContext } from "./context/theme";
+import { ProjectsProvider } from "./context/projects/context";
+import { MembersProvider } from "./context/members/context";
+
+// {
+//   element: (
+//     <ProtectedRoute>
+//       <Layout />
+//     </ProtectedRoute>
+//   ),
+//   children: [ // in this every one is child components of "<Layout />" component
+//   {
+//     path: "/home", // path of url
+//     element: <HomePage /> // the page that we are show in the upper url
+//   },
+//   {
+//     path: "/tasks",
+//     element: <TaskListPage />
+//   },
+//   {
+//     path: "/tasks/:id",
+//     element: (<TaskDetailsPage />)
+//   },
+//  ]
+// }
 
 function App() {
+  const { theme } = useContext(ThemeContext); // we are taking and storing the value of "ThemeContext" using "useContext"
   return (
-    <div>
-      {/* <Form />
-      <ReactPlayground /> */}
-      <RouterProvider router={router} />
+    <div
+      className={`h-screen w-full mx-auto py-2 ${
+        theme === "dark" ? "dark" : ""
+      }`}
+    >
+      <MembersProvider>
+        <ProjectsProvider>
+          <RouterProvider router={router} />
+        </ProjectsProvider>
+      </MembersProvider>
     </div>
   );
 }
