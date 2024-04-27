@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Logo from "../../assets/images/logo.png";
 import { ThemeContext } from "../../context/theme";
 import { Link, useLocation } from "react-router-dom";

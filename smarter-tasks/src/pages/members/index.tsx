@@ -1,4 +1,3 @@
-import React from "react";
 import NewMember from "./NewMember";
 import MemberList from "./MemberList";
 
