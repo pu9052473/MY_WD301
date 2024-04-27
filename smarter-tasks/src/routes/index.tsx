@@ -14,7 +14,7 @@ import AccountLayout from "../layouts/account";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/account/projects" replace />,
+    element: <Navigate to="/signup" replace />,
   },
   {
     path: "/signin",
