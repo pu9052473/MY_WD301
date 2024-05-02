@@ -105,7 +105,7 @@ const SigninForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const { email, password } = data;
-    console.log(email, password);
+    // console.log(email, password);
     try {
       const response = await fetch(`${API_ENDPOINT}/users/sign_in`, {
         method: "POST",
@@ -147,6 +147,7 @@ const SigninForm: React.FC = () => {
           {...register("password", { required: true })}
           name="password"
           id="password"
+          type="password"
           className="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline-blue"
         />
         {errors.password && <span>This field is required</span>}

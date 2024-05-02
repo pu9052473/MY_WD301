@@ -60,7 +60,7 @@ export const reducer = (
     case "DELETE_MEMBER_SUCCESS":
       return {
         ...state,
-        Members: state.Members.filter((member) => member.id !== action.payload),
+        Members: state.Members.filter((member) => member.id !== action.payload), // after delete the member done by the "API call" then this function chek if there any member with the deleted id is there then it filter out from the array
         isError: false,
       };
     default:

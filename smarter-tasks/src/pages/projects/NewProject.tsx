@@ -208,6 +208,7 @@ const NewProject = () => {
     <>
       <button
         type="button"
+        id="newProjectBtn"
         onClick={openModal}
         className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
       >
@@ -249,6 +250,7 @@ const NewProject = () => {
                       {/* I'll show the error, if it exists.*/}
                       {error && <span>{error}</span>}
                       <input
+                        id="Name"
                         type="text"
                         placeholder="Enter project name..."
                         autoFocus
@@ -266,6 +268,7 @@ const NewProject = () => {
                       </button>
                       <button
                         type="submit"
+                        id="submitNewProjectBtn"
                         onClick={closeModal}
                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       >
