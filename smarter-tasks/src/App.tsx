@@ -2,7 +2,7 @@
 import { RouterProvider } from "react-router-dom";
 
 import router from "./routes";
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 import { ThemeContext } from "./context/theme";
 import { ProjectsProvider } from "./context/projects/context";
 import { MembersProvider } from "./context/members/context";
@@ -37,11 +37,13 @@ function App() {
         theme === "dark" ? "dark" : ""
       }`}
     >
-      <MembersProvider>
-        <ProjectsProvider>
-          <RouterProvider router={router} />
-        </ProjectsProvider>
-      </MembersProvider>
+      <ProjectsProvider>
+        <MembersProvider>
+          <Suspense fallback={<>Loading...</>}>
+            <RouterProvider router={router} />
+          </Suspense>
+        </MembersProvider>
+      </ProjectsProvider>
     </div>
   );
 }

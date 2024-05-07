@@ -1,3 +1,4 @@
+/* eslint-disable no-empty-pattern */
 import NewCommentForm from "../comment/NewComment";
 import { Fragment, useState } from "react";
 import { updateTask } from "../../context/task/actions";
@@ -51,7 +52,7 @@ const TaskDetails = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: {},
   } = useForm<TaskFormUpdatePayload>({
     defaultValues: {
       title: selectedTask.title,

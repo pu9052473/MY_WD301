@@ -25,6 +25,11 @@ export default function ProjectListItems() {
     return <span>{errorMessage}</span>;
   }
 
+  // // This check is to validate ErrorBoundary Implementation. Remove this before milestone submission
+  // if (projects.length === 0) {
+  //   throw Error("Error!!!");
+  // }
+
   // And finally I'll iterate over the projects object to show the
   // individual projects card.
   return (

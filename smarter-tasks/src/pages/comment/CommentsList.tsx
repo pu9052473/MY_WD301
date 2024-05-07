@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -56,7 +57,7 @@ const CommentsList = () => {
     (task: any) => `${task.task_id}` === taskID
   );
 
-  //   console.log("selectedTaskComments:", selectedTaskComments);
+  console.log("selectedTaskComments:", selectedTaskComments);
 
   return (
     <>

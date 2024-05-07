@@ -114,7 +114,10 @@
 // };
 // export default ProjectList;
 
+import { useEffect } from "react";
 import ProjectListItems from "./ProjectListItems";
+import { fetchProjects } from "../../context/projects/actions";
+import { useProjectsDispatch } from "../../context/projects/context";
 
 // import { fetchProjects } from "../../context/projects/actions";
 // // So, let's import the useProjectsDispatch custom hook.
@@ -132,6 +135,11 @@ import ProjectListItems from "./ProjectListItems";
 //   }, []);
 
 const ProjectList: React.FC = () => {
+  const projectDispatch = useProjectsDispatch();
+  useEffect(() => {
+    fetchProjects(projectDispatch);
+  }, [projectDispatch]);
+
   return (
     <div className="grid gap-4 grid-cols-4 mt-5">
       {/*To keep this file clean, I'll move all the logic to access the projects 

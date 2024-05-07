@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Signin() {
+function SigninPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -28,7 +28,10 @@ function Signin() {
             <label
               htmlFor="username"
               className="block text-gray-700 font-semibold mb-2"
-            > Username </label>
+            >
+              {" "}
+              Username{" "}
+            </label>
             <input
               type="text"
               id="username"
@@ -43,7 +46,10 @@ function Signin() {
             <label
               htmlFor="password"
               className="block text-gray-700 font-semibold mb-2"
-            > Password </label>
+            >
+              {" "}
+              Password{" "}
+            </label>
             <input
               type="password"
               id="password"
@@ -58,7 +64,10 @@ function Signin() {
             <button
               type="submit"
               className="w-full bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-gray"
-            > Sign In </button>
+            >
+              {" "}
+              Sign In{" "}
+            </button>
           </div>
         </form>
       </div>
@@ -66,4 +75,4 @@ function Signin() {
   );
 }
 
-export default Signin;
+export default SigninPage;
