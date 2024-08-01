@@ -1,0 +1,1 @@
+import{a as e,b as r,r as o,j as a,O as c}from"./index-Ca0gi0pd.js";import{f as m}from"./action-BvoFh2lG.js";import{f as p}from"./actions-CuqEsQch.js";import"./constants-qZa9FZnL.js";const u=()=>{const t=e(),s=r();return o.useEffect(()=>{p(s),m(t)},[s,t]),a.jsx(c,{})};export{u as default};

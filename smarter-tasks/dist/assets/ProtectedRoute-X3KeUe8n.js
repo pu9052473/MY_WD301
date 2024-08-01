@@ -1,0 +1,1 @@
+import{e as r,j as e,N as n}from"./index-Ca0gi0pd.js";function u({children:a}){const{pathname:o}=r(),t=!!localStorage.getItem("authToken");return console.log("authenticated",t),t?e.jsx(e.Fragment,{children:a}):e.jsx(n,{to:"/signin",replace:!0,state:{referrer:o}})}export{u as default};
